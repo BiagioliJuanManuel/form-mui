@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {
+  Box,
+  TextField,
+  Container,
+  Card,
+  CardContent,
+  CardHeader,
+  Button
+} from '@mui/material';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Container className='container' >
+      <Card className='card' >
+        <CardHeader title="Formulario MUI" subheader="Por favor complete el formulario" />
+        <CardContent>
+          <Box component="form" noValidate className='form'>
+            <TextField id="name" label="Nombre" autoComplete="given-name" required variant="outlined" fullWidth />
+            <TextField id="name" label="Apellido" autoComplete="family-name" required variant="outlined" fullWidth />
+            <TextField id="email" label="Email" type="email" autoComplete="email" required variant="outlined" fullWidth />
+            <Button type="submit" variant="contained" color="primary" fullWidth>
+              Enviar
+            </Button>
+          </Box>
+        </CardContent>
+      </Card>
+    </Container>
+  );
 }
 
-export default App
+export default App;
